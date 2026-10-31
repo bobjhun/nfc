@@ -668,7 +668,10 @@ export function NfcManagement() {
               <label className="block space-y-1 text-sm font-medium">Business name<Input required maxLength={160} value={businessName} onChange={(event) => setBusinessName(event.target.value)} /></label>
               <label className="block space-y-1 text-sm font-medium">Slug (optional)<Input maxLength={100} placeholder="generated-from-business-name" value={businessSlug} onChange={(event) => setBusinessSlug(event.target.value)} /></label>
               <label className="block space-y-1 text-sm font-medium">Google Review URL<Input required type="url" placeholder="https://g.page/r/.../review" value={reviewUrl} onChange={(event) => setReviewUrl(event.target.value)} /></label>
-              <div className="flex justify-end gap-2"><Button type="button" variant="outline" onClick={() => setModal(null)}>Cancel</Button><Button disabled={pending}>{pending ? "Saving..." : "Save business"}</Button></div>
+              <div className="flex justify-end gap-2">
+                <Button type="button" variant="outline" onClick={() => setModal(null)}>Cancel</Button>
+                <Button type="submit" disabled={pending}>{pending ? "Saving..." : "Save business"}</Button>
+              </div>
             </form>
           </>}
           {modal?.type === "create-card" && <>
@@ -676,7 +679,10 @@ export function NfcManagement() {
             <form onSubmit={(event) => void submitNewCard(event)} className="space-y-4">
               <label className="block space-y-1 text-sm font-medium">Business<select required value={newCardBusinessId} onChange={(event) => setNewCardBusinessId(event.target.value)} className="h-10 w-full rounded-lg border bg-white px-3"><option value="">Select a business</option>{activeBusinesses.map((business) => <option key={business.id} value={business.id}>{business.name}</option>)}</select></label>
               <p className="break-all rounded-lg bg-slate-50 p-3 text-xs text-slate-600">The generated URL is bound to the server&apos;s configured public origin. Set NFC_PUBLIC_BASE_URL for production HTTPS.</p>
-              <div className="flex justify-end gap-2"><Button type="button" variant="outline" onClick={() => setModal(null)}>Cancel</Button><Button disabled={pending || !newCardBusinessId}>{pending ? "Registering..." : "Register card"}</Button></div>
+              <div className="flex justify-end gap-2">
+                <Button type="button" variant="outline" onClick={() => setModal(null)}>Cancel</Button>
+                <Button type="submit" disabled={pending || !newCardBusinessId}>{pending ? "Registering..." : "Register card"}</Button>
+              </div>
             </form>
           </>}
           {modal?.type === "assign" && <>
@@ -684,7 +690,10 @@ export function NfcManagement() {
             <form onSubmit={(event) => void submitAssignment(event)} className="space-y-4">
               <p className="font-mono text-xs">{modal.card.card_identifier}</p>
               <label className="block space-y-1 text-sm font-medium">Business<select value={assignBusinessId} onChange={(event) => setAssignBusinessId(event.target.value)} className="h-10 w-full rounded-lg border bg-white px-3"><option value="">Unassigned</option>{activeBusinesses.map((business) => <option key={business.id} value={business.id}>{business.name}</option>)}</select></label>
-              <div className="flex justify-end gap-2"><Button type="button" variant="outline" onClick={() => setModal(null)}>Cancel</Button><Button disabled={pending}>{pending ? "Saving..." : "Save assignment"}</Button></div>
+              <div className="flex justify-end gap-2">
+                <Button type="button" variant="outline" onClick={() => setModal(null)}>Cancel</Button>
+                <Button type="submit" disabled={pending}>{pending ? "Saving..." : "Save assignment"}</Button>
+              </div>
             </form>
           </>}
           {modal?.type === "write" && <>
