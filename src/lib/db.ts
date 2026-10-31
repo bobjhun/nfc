@@ -5,11 +5,10 @@ declare global {
 }
 
 const poolOptions = {
-  host: process.env.DB_HOST ?? "127.0.0.1",
-  port: Number(process.env.DB_PORT ?? "3307"),
-  database: process.env.DB_NAME ?? "social_media",
-  user: process.env.DB_USER ?? "root",
-  password: process.env.DB_PASSWORD ?? "",
+  host: process.env.DB_HOST ?? "srv2100.hstgr.io",
+  database: process.env.DB_NAME ?? "u451395970_nfc",
+  user: process.env.DB_USER ?? "u451395970_nfc",
+  password: process.env.DB_PASSWORD ?? "Nfc2026!",
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
