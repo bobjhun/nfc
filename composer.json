@@ -1,0 +1,6 @@
+{
+    "require": {
+        "chillerlan/php-qrcode": "^6.0",
+        "google/analytics-data": "^0.28.0"
+    }
+}
