@@ -1,0 +1,12 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^php -l index\\.php; php -l qr-codes\\.php; php -l assets\\\\sidebar\\.php; php -l assets\\\\topbar\\.php; php -l assets\\\\footer\\.php$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^php -S 127\\.0\\.0\\.1:8093 -t C:\\\\xampp\\\\htdocs\\\\social-media$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
